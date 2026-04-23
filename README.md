@@ -86,7 +86,7 @@ docker exec -it mysql mysql -u root -p
 Password:
 
 ```
-Test@123
+find it by your own
 ```
 
 Then:
