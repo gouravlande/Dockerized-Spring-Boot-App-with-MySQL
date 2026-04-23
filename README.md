@@ -113,6 +113,13 @@ docker pull gouravlande/springboot-bankapp-bankapp:latest
 
 ![App Screenshot](https://github.com/user-attachments/assets/e6884c42-bfc7-4505-8a95-479edcdd7786)
 
+<img width="1360" height="642" alt="image" src="https://github.com/user-attachments/assets/e6884c42-bfc7-4505-8a95-479edcdd7786" />
+
+
+<img width="1513" height="765" alt="image" src="https://github.com/user-attachments/assets/9ef4fc1c-67e7-42ae-aa7f-1e47c040f02e" />
+<img width="1488" height="583" alt="image" src="https://github.com/user-attachments/assets/1cbe32ce-1438-49c3-9f86-312eca797398" />
+
+
 ---
 
 ## 🧠 Learning Outcomes
@@ -147,11 +154,5 @@ If you found this project useful, please ⭐ the repository!
 
 
 
-
-<img width="1360" height="642" alt="image" src="https://github.com/user-attachments/assets/e6884c42-bfc7-4505-8a95-479edcdd7786" />
-
-
-<img width="1513" height="765" alt="image" src="https://github.com/user-attachments/assets/9ef4fc1c-67e7-42ae-aa7f-1e47c040f02e" />
-<img width="1488" height="583" alt="image" src="https://github.com/user-attachments/assets/1cbe32ce-1438-49c3-9f86-312eca797398" />
 
 
