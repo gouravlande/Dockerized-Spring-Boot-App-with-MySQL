@@ -1,46 +1,31 @@
 version: "3.8"
+
 services:
+
   mysql:
-    image: mysql:latest
+    image: mysql
     container_name: mysql
+    restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=Test@123
-      - MYSQL_DATABASE=BankDB
-    volumes:
-      - bankapp-volume:/var/lib/mysql
+      MYSQL_DATABASE: bankappdb
+      MYSQL_ROOT_PASSWORD: Test@123
     networks:
       - bankapp
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      interval: 10s
-      timeout: 5s
-      retries: 3
-      start_period: 30s
 
-  mainapp:
-    image: ${DUSER}/${IMAGE}
-    container_name: Bankapp
+  bankapp:
+    build: .
+    container_name: bankapp
+    restart: always
+    depends_on:
+      - mysql
     environment:
-      - SPRING_DATASOURCE_USERNAME=root
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/BankDB?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-      - SPRING_DATASOURCE_PASSWORD=Test@123
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: Test@123
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/bankappdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
     ports:
       - "8080:8080"
-    depends_on:
-      mysql:
-        condition: service_healthy
     networks:
       - bankapp
-    restart: always
-    healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:8080/actuator/health || exit 1"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 30s
 
 networks:
   bankapp:
-
-volumes:
-    bankapp-volume:
