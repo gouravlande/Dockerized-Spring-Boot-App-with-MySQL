@@ -4,7 +4,6 @@ services:
 
   mysql:
     image: mysql
-    container_name: mysql
     restart: always
     environment:
       MYSQL_DATABASE: bankappdb
@@ -14,7 +13,6 @@ services:
 
   bankapp:
     build: .
-    container_name: bankapp
     restart: always
     depends_on:
       - mysql
@@ -23,7 +21,7 @@ services:
       SPRING_DATASOURCE_PASSWORD: Test@123
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/bankappdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
     ports:
-      - "8080:8080"
+      - "9090:8080"
     networks:
       - bankapp
 
